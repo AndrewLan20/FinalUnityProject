@@ -50,23 +50,32 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         charMove = transform.right * horizontalInput + transform.forward * verticalInput;
         speed = 12f;
-        if (Input.GetKey("left shift"))
-        {
-            speed *= 2;
-        }
-        controller.Move(charMove * speed* Time.deltaTime);
 
-        
+
+
+        if (Input.GetKey("left shift") && isGrounded)
+        {
+            speed *= 1.5f;
+        }
+
+      
+
+
+            controller.Move(charMove * speed* Time.deltaTime);
         controller.Move(jumpVelocity * Time.deltaTime);
 
         //controls player physics
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+
+
         if (Input.GetKeyDown("space") && isGrounded)
         {
             jumpVelocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
+
+
 
         jumpVelocity.y += gravity * Time.deltaTime;
 
