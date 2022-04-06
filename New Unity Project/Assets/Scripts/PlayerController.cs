@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         charMove = transform.right * horizontalInput + transform.forward * verticalInput;
         speed = 12f;
+        if (Input.GetKey("left shift"))
+        {
+            speed *= 2;
+        }
         controller.Move(charMove * speed* Time.deltaTime);
 
         
