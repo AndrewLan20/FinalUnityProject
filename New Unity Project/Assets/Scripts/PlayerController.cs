@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector3 charMove;
     public CharacterController controller;
     public float speed;
-    public float airSpeed = 12f;
+    
     public float jumpheight = 3f;
     Vector3 jumpVelocity;
     
