@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     private bool playerInRange;
+    private float minDistance;
     // Start is called before the first frame update
     public GameObject player;
     [Header("Interact")]
@@ -18,6 +19,16 @@ public class DialogueTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        minDistance = 7.5f;
+
+        if (Vector3.Distance(transform.position, player.transform.position) < minDistance)
+        {
+            playerInRange = true;
+        }
+        else {
+            playerInRange = false;
+        }
+
         if (playerInRange)
         {
             interact.SetActive(true);
