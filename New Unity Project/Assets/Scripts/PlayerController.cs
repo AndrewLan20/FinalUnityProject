@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = .4f;
     public LayerMask groundMask;
     bool isGrounded;
+   
+
+
 
     // Start is called before the first frame update
     void Start()
