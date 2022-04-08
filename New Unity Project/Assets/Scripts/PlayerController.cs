@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector3 charMove;
     public CharacterController controller;
     public float speed;
-    public float airSpeed = 12f;
+    
     public float jumpheight = 3f;
     Vector3 jumpVelocity;
     
@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = .4f;
     public LayerMask groundMask;
     bool isGrounded;
+   
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,19 +53,32 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         charMove = transform.right * horizontalInput + transform.forward * verticalInput;
         speed = 12f;
-        controller.Move(charMove * speed* Time.deltaTime);
 
-        
+
+
+        if (Input.GetKey("left shift") && isGrounded)
+        {
+            speed *= 1.5f;
+        }
+
+      
+
+
+            controller.Move(charMove * speed* Time.deltaTime);
         controller.Move(jumpVelocity * Time.deltaTime);
 
         //controls player physics
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+
+
         if (Input.GetKeyDown("space") && isGrounded)
         {
             jumpVelocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
+
+
 
         jumpVelocity.y += gravity * Time.deltaTime;
 
