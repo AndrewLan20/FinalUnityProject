@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 469471289}
   m_Layer: 0
   m_Name: PlayerModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513466578}
   - component: {fileID: 513466579}
+  - component: {fileID: 513466580}
   m_Layer: 0
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -488,6 +489,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13, y: 2, z: 13}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &513466580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513466577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ddc002846ed2c4785f08bb65d55bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2007011396}
+  interact: {fileID: 1377558786}
 --- !u!1 &526659322
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792815885}
+  - component: {fileID: 792815886}
   m_Layer: 0
   m_Name: Steven
   m_TagString: NPC
@@ -926,6 +942,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &792815886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792815884}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ddc002846ed2c4785f08bb65d55bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  interact: {fileID: 1377558786}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1377558787
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2354,7 +2384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007011396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.92, y: 9.53, z: -57.1}
+  m_LocalPosition: {x: 41.92, y: 9, z: -57.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469471285}
@@ -2395,8 +2425,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.5958776, z: 1.0627518}
-  m_Center: {x: 0, y: 0.08726835, z: -0.031375885}
+  m_Size: {x: 1.9943657, y: 3.5958776, z: 3.147232}
+  m_Center: {x: -0.056928635, y: 0.08726835, z: 0.30737305}
 --- !u!1001 &4280240420934966919
 PrefabInstance:
   m_ObjectHideFlags: 0

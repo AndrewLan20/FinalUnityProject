@@ -32,7 +32,11 @@ public class DialogueTrigger : MonoBehaviour
         if (playerInRange)
         {
             interact.SetActive(true);
-            Debug.Log("You're close to Steven");
+            
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("player pressed interact button");
+            }
         }
         else
         {

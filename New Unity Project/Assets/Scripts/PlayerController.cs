@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("left shift") && isGrounded)
         {
+            Debug.Log("Shift is pressed, player is running");
             speed *= 1.5f;
         }
 
