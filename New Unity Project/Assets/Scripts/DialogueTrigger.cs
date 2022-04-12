@@ -10,6 +10,9 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject player;
     [Header("Interact")]
     [SerializeField] private GameObject interact;
+
+    [Header("Ink JSON")]
+    [SerializeField] private TextAsset InkJSON;
     void Start()
     {
         playerInRange = false;
@@ -35,7 +38,7 @@ public class DialogueTrigger : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("player pressed interact button");
+                Debug.Log(InkJSON.text);
             }
         }
         else
