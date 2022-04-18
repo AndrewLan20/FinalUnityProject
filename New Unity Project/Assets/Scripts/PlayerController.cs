@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = .4f;
     public LayerMask groundMask;
-    bool isGrounded;
-   
+
+    private bool isGrounded;
+    private float isRunning;
+
 
 
 
@@ -56,7 +58,13 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKey("left shift") && isGrounded)
+        if (Input.GetKeyDown("left shift") && isGrounded)
+        {
+            isRunning *= -1;
+            
+        }
+
+        if (isRunning < 0)
         {
             Debug.Log("Shift is pressed, player is running");
             speed *= 1.5f;
