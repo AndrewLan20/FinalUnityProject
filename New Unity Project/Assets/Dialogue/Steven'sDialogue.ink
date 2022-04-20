@@ -10,9 +10,9 @@ First off, how excited are you to play this game?
 +[Huh?] -> repeat
 
 == excited ==
-I'm pretty excited for this game!  -> END
+That's great!  -> END
 == notVeryExcited ==
-It's whatever, I couldn't really be bohered to care -> END
+You really don't care about this game? Why are you even playing it then. You ain't one of them art critic are ya? -> END
 == repeat ==
 ARE YOU DEAF, 
 I SAID  how excited are you to play this game? -> My_Choices

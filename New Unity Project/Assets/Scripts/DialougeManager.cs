@@ -13,6 +13,11 @@ public class DialougeManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI dialogueText;
 
+    [Header("Choices UI")]
+
+    [SerializeField] private GameObject[] choices;
+
+    private TextMeshProUGUI[] choicesText;
     public bool dialogueIsPlaying { get; private set; }
 
     private Story currentStory;
@@ -33,6 +38,14 @@ public class DialougeManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+
+        choicesText = new TextMeshProUGUI[choices.Length];
+        int index = 0;
+        foreach (GameObject choice in choices)
+        {
+            choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            index++;
+        }
     }
 
     // Update is called once per frame
@@ -68,11 +81,37 @@ public class DialougeManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
+            DisplayChoices();
         }
         else
         {
             ExitDialogueMode();
         }
+    }
+
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("More choices than were given than the UI can support. Number of choices given: " + currentChoices.Count) ;
+        }
+
+        int index = 0;
+
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            index++;
+        }
+
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+
     }
 
     void Update()
@@ -82,7 +121,7 @@ public class DialougeManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) )
+        if (Input.GetKeyDown(KeyCode.F) )
         {
             ContinueStory();
         }
