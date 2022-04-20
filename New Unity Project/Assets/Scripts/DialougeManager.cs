@@ -82,7 +82,7 @@ public class DialougeManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) )
+        if (Input.GetKeyDown(KeyCode.R) )
         {
             ContinueStory();
         }

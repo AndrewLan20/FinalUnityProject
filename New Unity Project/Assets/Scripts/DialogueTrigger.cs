@@ -44,7 +44,7 @@ public class DialogueTrigger : MonoBehaviour
         else
         {
             interact.SetActive(false);
-            Debug.Log("You're far from Steven");
+            
         }
     }
 

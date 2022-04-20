@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
 
     private bool isGrounded;
-    private float isRunning;
+    float isRunning;
 
 
 
