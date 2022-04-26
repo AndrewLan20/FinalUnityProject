@@ -19,6 +19,10 @@ public class GrimoireProjectile : MonoBehaviour
     {
         Debug.Log("hit " + other.name + "!");
         Destroy(gameObject);
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            Debug.Log("WHAT'S WRONG WITH YOU");
+        }
     }
 
 }

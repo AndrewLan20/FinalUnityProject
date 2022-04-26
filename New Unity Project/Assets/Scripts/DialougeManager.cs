@@ -81,14 +81,14 @@ public class DialougeManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
-            DisplayChoices();
+          //  DisplayChoices();
         }
         else
         {
             ExitDialogueMode();
         }
     }
-
+    /*
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
@@ -113,7 +113,7 @@ public class DialougeManager : MonoBehaviour
         }
 
     }
-
+    */
     void Update()
     {
         if (!dialogueIsPlaying)
