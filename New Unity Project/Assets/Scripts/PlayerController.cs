@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown("space") && isGrounded)
+        if (Input.GetKeyDown("space"))
         {
             jumpVelocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
