@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector3 charMove;
     public CharacterController controller;
     public float speed;
-    
+    public float playerHealth;
     public float jumpheight = 3f;
     Vector3 jumpVelocity;
     
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown("space") && isGrounded)
+        if (Input.GetKeyDown("space"))
         {
             jumpVelocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }

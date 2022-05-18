@@ -29,26 +29,29 @@ public class GrimoireBehaviour : MonoBehaviour
     }
 
 
+   
+
     private void fire()
     {
-        GameObject bullet = Instantiate(grimoireProjectile);
 
-       // Physics.IgnoreCollision(grimoireProjectile.GetComponent<Collider>(), projectileSpawn.parent.GetComponent<Collider>());
+        GameObject projectile;
 
-        grimoireProjectile.transform.position = projectileSpawn.position;
+        projectile = Instantiate(grimoireProjectile, transform.position, projectileSpawn.transform.rotation);
 
-        Vector3 rotation = grimoireProjectile.transform.rotation.eulerAngles;
 
-        grimoireProjectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
-        grimoireProjectile.transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+        rb.AddRelativeForce(Vector3.forward * projectileSpeed);
 
-        StartCoroutine(DestroyBulletAfterTime(grimoireProjectile, lifeTime));
+        StartCoroutine(DestroyBulletAfterTime(projectile, lifeTime));
+
+      
     }
 
     private IEnumerator DestroyBulletAfterTime(GameObject grimoireProjectile, float lifeTime)
     {
         yield return new WaitForSeconds(lifeTime);
+        DestroyImmediate(grimoireProjectile, true);
     }
 
 
