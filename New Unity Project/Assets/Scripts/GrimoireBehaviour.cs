@@ -38,7 +38,6 @@ public class GrimoireBehaviour : MonoBehaviour
 
         projectile = Instantiate(grimoireProjectile, transform.position, projectileSpawn.transform.rotation);
 
-        //projectile.transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 

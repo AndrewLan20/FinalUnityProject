@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb45ef18ca999fa43bdc60c4076cc95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 4885209078039771780, guid: f9366f94959067749a0f909a03b64216, type: 3}
+  enemyStats: {fileID: 0}
 --- !u!54 &9215521017426681034
 Rigidbody:
   m_ObjectHideFlags: 0
